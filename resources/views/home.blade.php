@@ -9,10 +9,17 @@
                         {{ __('Dashboard') }}</div>
 
                     <div class="card-body">
-
-
                         <h2 class="text-center ">selamat datang</h2>
-                        <img src="{{ asset('chenel.png') }}" width="100" />
+                        <center>
+                            <img src="{{ asset('chenel.png') }}" width="100" />
+                        </center>
+
+                        @if (Auth::user()->level == 'masyarakat')
+                            <a href="{{ url('/lapor') }}" class="btn btn-outline-dark w-100 mt-2 btn-lg">
+                                LAPOR PAK
+                            </a>
+                        @endif
+
                     </div>
                 </div>
             </div>
